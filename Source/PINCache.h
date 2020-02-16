@@ -139,6 +139,7 @@ PIN_SUBCLASSING_RESTRICTED
  @param keyEncoder A block used to encode key(filename). If nil provided, default url encoder will be used
  @param keyDecoder A block used to decode key(filename). If nil provided, default url decoder will be used
  @param ttlCache Whether or not the cache should behave as a TTL cache.
+ @param diskOnly Whether or not the cache should only save/read data to/from disk.
  @result A new cache with the specified name.
  */
 - (instancetype)initWithName:(nonnull NSString *)name
@@ -147,7 +148,8 @@ PIN_SUBCLASSING_RESTRICTED
                 deserializer:(nullable PINDiskCacheDeserializerBlock)deserializer
                   keyEncoder:(nullable PINDiskCacheKeyEncoderBlock)keyEncoder
                   keyDecoder:(nullable PINDiskCacheKeyDecoderBlock)keyDecoder
-                    ttlCache:(BOOL)ttlCache NS_DESIGNATED_INITIALIZER;
+                    ttlCache:(BOOL)ttlCache
+                    diskOnly:(BOOL)diskOnly NS_DESIGNATED_INITIALIZER;
 
 @end
 
